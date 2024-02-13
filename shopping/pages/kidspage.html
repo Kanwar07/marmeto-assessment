@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shopping Mania</title>
+    <link rel="stylesheet" href="../css/kidspage.css" />
+  </head>
+  <body>
+    <div>
+      <h1 id="heading">SELECT YOUR CHOICE</h1>
+      <div class="menu">
+        <a href="./menspage.html" class="submenu1">Men</a>
+        <a href="./womenpage.html" class="submenu2">Women</a>
+        <a href="./kidspage.html" class="submenu3"
+          ><img
+            src="../../assets/kid.svg"
+            alt="kid"
+            style="padding-right: 10px"
+          />Kids</a
+        >
+      </div>
+    </div>
+    <main>
+      <div id="container">
+        <div class="content">
+          <div class="row" id="data"></div>
+        </div>
+      </div>
+    </main>
+    <script type="module">
+      import { getdata } from "../../script.js";
+
+      function displaydata(data) {
+        const container = document.getElementById("container");
+
+        data.map((clothes) => {
+          if (clothes.category_name === "Kids") {
+            const kidsCollections = clothes.category_products;
+
+            kidsCollections.map((item) => {
+              if (item.badge_text !== null) {
+                additem(
+                  item.id,
+                  item.title,
+                  item.price,
+                  item.image,
+                  item.compare_at_price,
+                  item.vendor,
+                  item.badge_text
+                );
+              } else {
+                additem(
+                  item.id,
+                  item.title,
+                  item.price,
+                  item.image,
+                  item.compare_at_price,
+                  item.vendor
+                );
+              }
+            });
+          } else {
+            return null;
+          }
+        });
+      }
+
+      function additem(
+        id,
+        title,
+        price,
+        image,
+        compare_at_price,
+        vendor,
+        badge_text
+      ) {
+        const discount = ((compare_at_price - price) / compare_at_price) * 100;
+
+        let divElement = document.createElement("div");
+        divElement.innerHTML = `
+        <div class="tile">
+            <div class = "tile-text text-center">
+                <div class="image">
+                    <span class="badge">${badge_text}</span>
+                    <img class="img-responsive" src="${image}"/>
+                </div>
+                <div class="heading-title">
+                    <h2>${title}</h2>
+                    <img src="../../assets/dot.svg" alt="dot"/>
+                    <h3>${vendor}</h3>
+                </div>
+                <div class="heading-price">
+                    <p>Rs ${price}</p>
+                    <p class="text-compare">${compare_at_price}</p>
+                    <p class="discount">${discount.toFixed(2)} %</p>
+                </div>
+            </div>
+            <button class = "button">Add to Cart</button>
+        </div>
+    `;
+        document.getElementById("data").append(divElement);
+      }
+
+      getdata().then((data) => {
+        displaydata(data.categories);
+      });
+    </script>
+  </body>
+</html>

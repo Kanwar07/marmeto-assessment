@@ -9,7 +9,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right bottom, #873572, black);
+  background-image: linear-gradient(
+    to right bottom,
+    #ffffff,
+    #dfdfdf,
+    #c0c0c0,
+    #a1a1a1,
+    #848484
+  );
 }
 a {
   display: inline-block;
@@ -17,8 +24,8 @@ a {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   white-space: nowrap;
-  padding: 12px;
-  border: 1px solid white;
+  padding: 16px;
+  border: 1px solid black;
   border-radius: 30px;
   text-decoration: none;
   transition: all 0.15s ease-in-out;
@@ -26,7 +33,7 @@ a {
 
 a:hover {
   background: rgba(0, 0, 0, 0.23);
-  color: white;
+  color: black;
   transform: scale(1.03);
   text-decoration: none;
 }
@@ -34,3 +41,10 @@ a:active {
   transform: scale(0.98);
 }
 
+.container {
+  color: black;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
