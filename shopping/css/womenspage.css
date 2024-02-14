@@ -50,19 +50,8 @@
 }
 
 .submenu1 {
-  display: flex;
-  text-decoration: none;
-  padding: 2% 15%;
-  font-size: xx-large;
-  cursor: pointer;
-  border-radius: 12.5px;
-  border: none;
-  color: white;
-  background-color: black;
-}
-
-.submenu2 {
   color: black;
+  display: flex;
   text-decoration: none;
   padding: 2% 15%;
   font-size: xx-large;
@@ -70,6 +59,19 @@
   background-color: lightgray;
   border-radius: 12.5px;
   border: none;
+}
+
+.submenu2 {
+  display: flex;
+  text-decoration: none;
+  padding: 2% 15%;
+  font-size: xx-large;
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 12.5px;
+  border: none;
+  color: white;
+  background-color: black;
 }
 
 .submenu3 {
