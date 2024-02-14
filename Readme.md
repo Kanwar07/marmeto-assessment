@@ -1,10 +1,12 @@
-Add the Extension (Live Server)
+# Coding Assessment L-2 Code
 
-Click on the live server icon at right bottom corner to start the server and display pages at localhost:(Port)
+1. **Add the Extension (Live Server)**
 
-Click on Start Shopping to proceed to next page
+2. **Click on the live server icon at right bottom corner to start the server and display pages at localhost:(Port)**
 
-Click on different categories to view:
+3. **Click on Start Shopping to proceed to next page**
+
+4. **Click on different categories to view:**
 
 Image
 Badge
@@ -15,4 +17,4 @@ Compare Price
 Discount
 Add to Cart Button
 
-Enjoy
+5. **Enjoy:**
