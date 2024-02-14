@@ -93,8 +93,11 @@
               <h3>${vendor}</h3>
           </div>
           <div class="heading-price">
-              <p>Rs ${price}</p>
-              <p class="text-compare">${compare_at_price}</p>
+              <p>Rs ${((price * 100) / 100).toFixed(2)}</p>
+              <p class="text-compare">${(
+                (compare_at_price * 100) /
+                100
+              ).toFixed(2)}</p>
               <p class="discount">${discount.toFixed(0)}% Off</p>
           </div>
       </div>
