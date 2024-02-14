@@ -6,8 +6,8 @@
 }
 
 .img-responsive {
-  width: 100%;
-  height: min-content;
+  max-width: 100%;
+  height: 375px;
   object-fit: cover;
 }
 
@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   font-size: 3rem;
-  margin: 2.5% 15%;
+  margin: 2% 15%;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -25,12 +25,15 @@
 .heading-title {
   display: flex;
   flex-direction: row;
-  align-items: last baseline;
-  gap: 10px;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
 .menu {
@@ -52,7 +55,9 @@
   padding: 2% 15%;
   font-size: xx-large;
   cursor: pointer;
+  background-color: lightgray;
   border-radius: 12.5px;
+  border: none;
 }
 
 .submenu2 {
@@ -61,7 +66,9 @@
   padding: 2% 15%;
   font-size: xx-large;
   cursor: pointer;
+  background-color: lightgray;
   border-radius: 12.5px;
+  border: none;
 }
 
 .submenu3 {
@@ -70,7 +77,9 @@
   padding: 2% 15%;
   font-size: xx-large;
   cursor: pointer;
+  background-color: lightgray;
   border-radius: 12.5px;
+  border: none;
   color: white;
   background-color: black;
 }
@@ -105,6 +114,7 @@
   align-items: center;
   font-family: "Inter", sans-serif;
   font-size: large;
+  cursor: pointer;
 }
 
 .image {
@@ -123,4 +133,95 @@
   color: black;
   padding: 5px 10px;
   font-size: 20px;
+}
+
+@media screen and (width < 767px) {
+  #data {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+    margin: 2.5% 15%;
+  }
+
+  #heading {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 2.5% 15%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 4% 15%;
+    border-radius: 12.5px;
+    background-color: lightgray;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media screen and (768px <= width <= 1024px) {
+  #data {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    margin: 2.5% 15%;
+  }
+
+  #heading {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 2.5% 15%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .img-responsive {
+    max-width: 100%;
+    height: 475px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (width > 1025px) {
+  #data {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+    margin: 1% 15%;
+  }
+
+  #heading {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 2% 15%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
